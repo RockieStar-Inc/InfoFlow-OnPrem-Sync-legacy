@@ -23,13 +23,20 @@ services:
       - LISTEN_ADDRESS=0.0.0.0:3009
       - DATABASE_URL=file:/app/ent.sqlite3
       # Uncomment to use your own S3 bucket (not recommended)
+      # If not provided, the service will use default S3 service via Minio
       # - S3_ENDPOINT=http://localhost:9000
       # - S3_ACCESS_KEY_ID=minioadmin
       # - S3_SECRET_ACCESS_KEY=minioadmin
       # - S3_BUCKET_NAME=infoflow
       - ADMIN_USERNAME=admin # Note: To protect your data, please change this username and password
-      - ADMIN_PASSWORD=admin
+      - ADMIN_PASSWORD=admin # these credentials are used to manage the infoflow-onprem-sync service in the future
       - ADMIN_EMAIL=admin@infoflow.app
+  # Uncomment to use cloudflare tunnel to connect to the infoflow-onprem-sync service via public internet
+  # cloudflared:
+  #   image: cloudflare/cloudflared:latest
+  #   command: tunnel --url http://localhost:3009
+  #   environment:
+  #     - TUNNEL_TOKEN= # add your cloudflare tunnel token here so that the service can connect to the infoflow-onprem-sync service via public internet
 ```
 
 ```shell
