@@ -34,7 +34,7 @@ services:
   # Uncomment to use cloudflare tunnel to connect to the infoflow-onprem-sync service via public internet
   # cloudflared:
   #   image: cloudflare/cloudflared:latest
-  #   command: tunnel --url http://localhost:3009
+  #   command: tunnel --no-autoupdate run # you still have to configure the tunnel in the cloudflare dashboard
   #   environment:
   #     - TUNNEL_TOKEN= # add your cloudflare tunnel token here so that the service can connect to the infoflow-onprem-sync service via public internet
 ```
