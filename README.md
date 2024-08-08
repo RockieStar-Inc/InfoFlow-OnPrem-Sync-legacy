@@ -11,6 +11,8 @@
 
 ### Using with Docker Compose
 
+Note: Make sure you change the `TOKEN` environment variable.
+
 ```yaml
 services:
   infoflow-sync-onprem-server:
@@ -31,6 +33,7 @@ services:
       - ADMIN_USERNAME=admin # Note: To protect your data, please change this username and password
       - ADMIN_PASSWORD=admin # these credentials are used to manage the infoflow-onprem-sync service in the future
       - ADMIN_EMAIL=admin@infoflow.app
+      - TOKEN=please_modify_this_token
   # Uncomment to use cloudflare tunnel to connect to the infoflow-onprem-sync service via public internet
   # cloudflared:
   #   image: cloudflare/cloudflared:latest
@@ -42,3 +45,9 @@ services:
 ```shell
 docker-compose up -d
 ```
+
+
+#### Configuration in InfoFlow app
+
+- Endpoint: `http://[your_ip_address]:3009` (example)
+- Token: `(see token above)`
