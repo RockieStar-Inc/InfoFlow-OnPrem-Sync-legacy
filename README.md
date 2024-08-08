@@ -14,7 +14,7 @@
 ```yaml
 services:
   infoflow-sync-onprem-server:
-    image: rockiestar/infoflow-onprem-sync:latest
+    image: rockiestar/infoflow-onprem-sync:latest # Note: If you're running it on arm64, the tag should be `arm64-latest`
     volumes:
       - ./data/infoflow_sync.sqlite3:/app/infoflow_sync.sqlite3
     ports:
