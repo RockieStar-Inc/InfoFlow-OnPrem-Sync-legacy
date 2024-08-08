@@ -16,12 +16,12 @@ services:
   infoflow-sync-onprem-server:
     image: rockiestar/infoflow-onprem-sync:latest # Note: If you're running it on arm64, the tag should be `arm64-latest`
     volumes:
-      - ./data/:/app/infoflow_sync.sqlite3
+      - ./data/:/app/data
     ports:
       - 3009:3009
     environment:
       - LISTEN_ADDRESS=0.0.0.0:3009
-      - DATABASE_URL=file:/app/infoflow_sync.sqlite3
+      - DATABASE_URL=file:/app/data
       # Uncomment to use your own S3 bucket (not recommended)
       # If not provided, the service will use default S3 service via Minio
       # - S3_ENDPOINT=http://localhost:9000
