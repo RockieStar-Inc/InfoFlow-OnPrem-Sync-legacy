@@ -33,7 +33,7 @@ services:
       - ADMIN_USERNAME=admin # Note: To protect your data, please change this username and password
       - ADMIN_PASSWORD=admin # these credentials are used to manage the infoflow-onprem-sync service in the future
       - ADMIN_EMAIL=admin@infoflow.app
-      - TOKEN=please_modify_this_token
+       - TOKEN=your_secure_token_here # Add this line to set a Bearer token for request authentication. PLEASE CHANGE IT!
   # Uncomment to use cloudflare tunnel to connect to the infoflow-onprem-sync service via public internet
   # cloudflared:
   #   image: cloudflare/cloudflared:latest
