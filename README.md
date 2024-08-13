@@ -1,5 +1,6 @@
 # InfoFlow: Sync Server
 
+![docker_badge](https://img.shields.io/docker/pulls/rockiestar/infoflow-onprem-sync.svg)
 
 ## Get Started
 
