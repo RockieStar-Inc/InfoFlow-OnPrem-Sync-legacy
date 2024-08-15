@@ -22,6 +22,11 @@ services:
       - ./data/:/app/data
     ports:
       - 3009:3009
+    logging: &default_logging
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
     environment:
       - LISTEN_ADDRESS=0.0.0.0:3009
       - DATABASE_URL=file:/app/data/infoflow_onprem_sync.sqlite3
@@ -39,8 +44,10 @@ services:
   # cloudflared:
   #   image: cloudflare/cloudflared:latest
   #   command: tunnel --no-autoupdate run # you still have to configure the tunnel in the cloudflare dashboard
+  #   logging: *default_logging
   #   environment:
   #     - TUNNEL_TOKEN= # add your cloudflare tunnel token here so that the service can connect to the infoflow-onprem-sync service via public internet
+
 ```
 
 ```shell
