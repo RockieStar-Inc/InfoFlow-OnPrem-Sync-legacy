@@ -54,6 +54,17 @@ services:
 docker-compose up -d
 ```
 
+### Upgrade
+
+Please make sure that you've backed up the database before upgrading the app version.
+
+
+#### Docker Compose
+
+```shell
+docker-compose pull && docker-compose up -d
+```
+
 
 #### Configuration in InfoFlow app
 
